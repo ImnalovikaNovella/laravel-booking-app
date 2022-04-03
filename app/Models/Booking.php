@@ -89,4 +89,5 @@ class Booking extends Model
             2 => 'Cancelled'
         ][$input];
     }
+
 }
