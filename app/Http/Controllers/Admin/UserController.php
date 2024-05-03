@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Role;
 use App\Models\User;
-use App\Models\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Request;
 use App\Http\Requests\Admin\StoreUserRequest;
@@ -45,7 +44,6 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $user = User::create($request->validated() + ['password' => bcrypt($request->password)]);
-        $customers = Customer::get()->pluck('full_name', 'id');
         $user->roles()->sync($request->input('roles'));
 
         return redirect()->route('admin.users.index')->with([
