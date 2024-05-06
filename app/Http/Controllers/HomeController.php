@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Frontend;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Admin\CustomerController;
+
 use App\Models\Log;
-use session; 
+use Session;
 
 //this is User model
 use App\Models\User;
@@ -18,23 +19,16 @@ class HomeController extends Controller
     public function shiftdata()
     {
         $users = User::get();
-        
-        foreach ($users as $key => $value){
-            Customer:: create ([
-                'first_name' => $value-> first_name;
-                'email' => $value-> email;
-            ]);
+        dd($users);
 
-            return 'Shift data successfully...!';
         }
-
-    }
-   
+    
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+    
     public function __construct()
     {
         $this->middleware('auth');

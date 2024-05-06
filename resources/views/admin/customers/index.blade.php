@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 
 @section('content')
@@ -51,7 +52,7 @@
                                 <td>{{ $customer->phone }}</td>
                                 <td>{{ $customer->email }}</td>
                                 <td>{{ $customer->address }}</td>
-                                <td>{{ $customer->country->name }}</td>
+                                <td>{{ $customer->country}}</td>
                                 <td>
                                     <a href="{{ route('admin.customers.edit', $customer->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil-alt"></i>
