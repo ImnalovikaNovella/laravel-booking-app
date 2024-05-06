@@ -1,5 +1,8 @@
 <?php
 
+
+namespace App\Http\Controllers;
+
 use App\Models\Country;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -39,4 +42,6 @@ class CreateCustomersTable extends Migration
     {
         Schema::dropIfExists('customers');
     }
+
+    
 }

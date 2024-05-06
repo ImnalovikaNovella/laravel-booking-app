@@ -1,5 +1,6 @@
 <?php
 
+use test\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('', function () {
     return view('auth.login');
 });
+
+
 
 Route::group(['middleware' => ['isAdmin','auth'],'prefix' => 'admin', 'as' => 'admin.'], function() {
     Route::get('dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard.index');
@@ -43,6 +46,7 @@ Route::group(['middleware' => ['isAdmin','auth'],'prefix' => 'admin', 'as' => 'a
     Route::post('find_rooms', [\App\Http\Controllers\Admin\FindRoomController::class, 'index']);
 
     Route::get('system_calendars', [\App\Http\Controllers\Admin\SystemCalendarController::class, 'index'])->name('system_calendars.index');
+
 });
 
 Auth::routes();
