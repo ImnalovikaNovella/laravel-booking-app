@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Request;
 use App\Http\Requests\Admin\StoreUserRequest;
 use App\Http\Requests\Admin\UpdateUserRequest;
 
-class UserController extends Controller
-{
+class UserController extends Controller{
     /**
      * Display a listing of the resource.
      *
